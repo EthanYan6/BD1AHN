@@ -26,6 +26,16 @@ function url(...parts) {
 
 marked.setOptions({ breaks: true, gfm: true });
 
+marked.use({
+  renderer: {
+    link({ href, title, tokens }) {
+      const text = this.parser.parseInline(tokens);
+      const titleAttr = title ? ` title="${String(title).replace(/"/g, '&quot;')}"` : '';
+      return `<a href="${href}"${titleAttr} target="_blank" rel="noopener noreferrer">${text}</a>`;
+    },
+  },
+});
+
 function parseProductMd(raw) {
   return matter(raw, {
     engines: {
