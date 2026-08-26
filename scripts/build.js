@@ -295,10 +295,15 @@ function renderProductSection(product, { id = product.slug } = {}) {
 
 function renderSiteHeader() {
   return `<header class="site-header">
-    <a href="${url('index.html')}" class="logo">
-      <span class="logo__brand">BD1AHN</span>
-      <span class="logo__tagline">开发作品展示</span>
-    </a>
+    <div class="site-header__brand">
+      <a href="${url('index.html')}" class="logo">
+        <span class="logo__brand">BD1AHN</span>
+        <span class="logo__tagline">开发作品展示</span>
+      </a>
+      <p class="visitor-stat" aria-live="polite">
+        共有 <span id="busuanzi_site_uv"><i class="visitor-stat__loading" aria-hidden="true"></i></span> Ham参观
+      </p>
+    </div>
     <button type="button" class="coffee-btn" id="coffeeBtn" title="点击打开页面进行打赏" aria-label="请他喝杯咖啡">
       <span class="coffee-text">请他喝杯咖啡</span>
     </button>
@@ -376,6 +381,7 @@ function pageHead(title) {
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="${url('assets/css/main.css')}">
   <link rel="stylesheet" href="${url('assets/css/donation.css')}">
+  <script src="//cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.min.js" defer></script>
 </head>`;
 }
 
