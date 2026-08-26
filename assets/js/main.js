@@ -1,4 +1,29 @@
 (function () {
+  const THEME_KEY = 'bd1ahn-theme';
+
+  /* ── Theme toggle ── */
+  const themeBtn = document.getElementById('themeToggle');
+  const root = document.documentElement;
+
+  function applyTheme(theme) {
+    root.setAttribute('data-theme', theme);
+    if (!themeBtn) return;
+    const isLight = theme === 'light';
+    themeBtn.setAttribute('aria-label', isLight ? '切换深色模式' : '切换浅色模式');
+    themeBtn.title = isLight ? '深色模式' : '浅色模式';
+  }
+
+  function toggleTheme() {
+    const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    applyTheme(next);
+    try { localStorage.setItem(THEME_KEY, next); } catch {}
+  }
+
+  if (themeBtn) {
+    themeBtn.addEventListener('click', toggleTheme);
+    applyTheme(root.getAttribute('data-theme') || 'dark');
+  }
+
   const ITEM_H = 56;
 
   /* ── Left product wheel ── */

@@ -2,6 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
+  <script>(function(){try{var k='bd1ahn-theme',t=localStorage.getItem(k);if(t!=='light'&&t!=='dark')t=window.matchMedia('(prefers-color-scheme:light)').matches?'light':'dark';document.documentElement.setAttribute('data-theme',t)}catch(e){document.documentElement.setAttribute('data-theme','dark')}})();</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>叮咚鸡（Dondji） · BD1AHN</title>
   <meta name="description" content="BD1AHN 开发作品展示">
@@ -24,9 +25,20 @@
         共有 <span id="busuanzi_site_uv"><i class="visitor-stat__loading" aria-hidden="true"></i></span> Ham参观
       </p>
     </div>
-    <button type="button" class="coffee-btn" id="coffeeBtn" title="点击打开页面进行打赏" aria-label="请他喝杯咖啡">
-      <span class="coffee-text">请他喝杯咖啡</span>
+    <div class="site-header__actions">
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="切换浅色模式" title="浅色模式">
+      <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="4"></circle>
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+      </svg>
+      <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
     </button>
+      <button type="button" class="coffee-btn" id="coffeeBtn" title="点击打开页面进行打赏" aria-label="请他喝杯咖啡">
+        <span class="coffee-text">请他喝杯咖啡</span>
+      </button>
+    </div>
   </header>
   <main class="showcase-scroll showcase-scroll--single">
     

@@ -53,7 +53,7 @@
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: rgba(0, 0, 0, 0.75);
+  background: var(--modal-backdrop);
   backdrop-filter: blur(6px);
   cursor: pointer;
 }
@@ -61,8 +61,8 @@
 .coffee-modal__panel {
   position: relative;
   z-index: 1;
-  background: #141414;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--modal-bg);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 24px;
   max-width: 480px;
@@ -153,7 +153,7 @@
 }
 
 .donation-board {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--tag-bg);
   border: 1px solid var(--border);
   border-radius: 8px;
   overflow: hidden;
@@ -200,7 +200,7 @@
   position: sticky;
   top: 0;
   z-index: 1;
-  background: #141414;
+  background: var(--modal-bg);
 }
 
 .donation-board__table th {
@@ -218,7 +218,7 @@
 
 .donation-board__table td {
   padding: 5px 4px;
-  color: rgba(240, 236, 228, 0.55);
+  color: var(--text-muted);
 }
 
 .donation-board__table td:nth-child(1) {
@@ -233,7 +233,7 @@
 }
 
 .donation-board__table tbody tr:hover {
-  background: rgba(201, 169, 98, 0.05);
+  background: var(--donation-row-hover);
 }
 
 .donation-board__table td:nth-child(3) {
