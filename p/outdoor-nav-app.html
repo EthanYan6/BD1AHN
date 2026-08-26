@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>野外导航 App · BD1AHN</title>
+  <meta name="description" content="BD1AHN 开发作品展示">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/donation.css">
+</head>
+<body class="page-product page-product--iphone">
+  <div class="grain" aria-hidden="true"></div>
+  <header class="site-header">
+    <a href="index.html" class="logo">
+      <span class="logo__brand">BD1AHN</span>
+      <span class="logo__tagline">开发作品展示</span>
+    </a>
+    <button type="button" class="coffee-btn" id="coffeeBtn" title="点击打开页面进行打赏" aria-label="请他喝杯咖啡">
+      <span class="coffee-text">请他喝杯咖啡</span>
+    </button>
+  </header>
+  <main class="showcase-scroll showcase-scroll--single">
+    
+  <section class="product-page" id="outdoor-nav-app" data-device="iphone">
+    <div class="product-detail">
+      <div class="product-showcase">
+        
+  <div class="device-mockup device-mockup--iphone" data-device="iphone">
+    <div class="device-mockup__screen device-mockup__screen--iphone">
+      <div class="device-carousel"><div class="device-slide active" data-index="0">
+          <img src="assets/products/outdoor-nav-app/screen-1.svg" alt="野外导航 App - 1" loading="eager">
+        </div><div class="device-slide" data-index="1">
+          <img src="assets/products/outdoor-nav-app/screen-2.svg" alt="野外导航 App - 2" loading="lazy">
+        </div></div><div class="screen-nav">
+      <button type="button" class="screen-nav__btn screen-nav__btn--prev" aria-label="上一张">‹</button>
+      <button type="button" class="screen-nav__btn screen-nav__btn--next" aria-label="下一张">›</button>
+      <span class="screen-nav__count"><span class="screen-nav__current">1</span> / 2</span>
+    </div>
+    </div>
+    <img class="device-mockup__frame" src="assets/images/devices/iphone-body.svg" alt="" draggable="false">
+  </div>
+      </div>
+      <div class="product-info">
+        <p class="product-meta">
+          <span class="device-badge device-badge--iphone">iPhone</span>
+          <time>2025-06</time>
+        </p>
+        <h1>野外导航 App</h1>
+        <p class="product-lead">为户外爱好者打造的离线地图导航应用，界面简洁、操作直观。</p>
+        <div class="product-tags"><span class="tag">iOS</span><span class="tag">导航</span><span class="tag">户外</span></div>
+        <div class="product-content prose">
+          <h2>项目概述</h2>
+<p>一款专注于野外徒步场景的 iOS 导航应用。支持离线地图下载、轨迹记录、海拔监测和天气预警，让每一次出行都更加安心。</p>
+<h2>设计理念</h2>
+<p>界面遵循「少即是多」的原则 — 在户外强光环境下依然清晰可读，大按钮设计方便戴手套操作，深色模式减少夜间使用时对眼睛的刺激。</p>
+<h2>功能亮点</h2>
+<ul>
+<li><strong>离线地图</strong> — 提前下载区域地图，无网络也能导航</li>
+<li><strong>轨迹记录</strong> — 自动记录行进路线，支持导出 GPX 格式</li>
+<li><strong>海拔曲线</strong> — 实时显示海拔变化，辅助判断地形</li>
+<li><strong>天气预警</strong> — 接入气象 API，提前推送恶劣天气提醒</li>
+</ul>
+<h2>技术栈</h2>
+<p>SwiftUI + MapKit + CoreLocation，数据持久化使用 SwiftData。</p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  </main>
+  <div id="coffeeModal" class="coffee-modal coffee-modal--donation" hidden aria-hidden="true">
+    <div class="coffee-modal__backdrop" data-coffee-dismiss tabindex="-1" aria-hidden="true"></div>
+    <div class="coffee-modal__panel" role="dialog" aria-modal="true" aria-labelledby="coffeeModalTitle">
+      <h2 id="coffeeModalTitle" class="coffee-modal__title">☕ 请作者喝杯咖啡</h2>
+      <div class="coffee-modal__body">
+        <div class="coffee-modal__left">
+          <div class="coffee-modal__content">
+            <p class="coffee-modal__text">感谢您关注 BD1AHN 的开发作品！维护网站与项目需要时间和精力。</p>
+            <p class="coffee-modal__text">如果这个项目对您有帮助，欢迎打赏支持！<strong>打赏时请备注您的呼号</strong>，方便我感谢您的支持！</p>
+            <div class="coffee-modal__qrcodes">
+              <div class="coffee-modal__qrcode-item">
+                <img src="assets/images/wechat_pay.jpg" alt="微信收款码" class="coffee-modal__qrcode-img">
+                <span class="coffee-modal__qrcode-label">微信支付</span>
+              </div>
+              <div class="coffee-modal__qrcode-item">
+                <img src="assets/images/ali_pay.jpg" alt="支付宝收款码" class="coffee-modal__qrcode-img">
+                <span class="coffee-modal__qrcode-label">支付宝</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="coffee-modal__right">
+          <div class="donation-board">
+            <div class="donation-board__header">打赏榜单</div>
+            <div class="donation-board__scroll">
+              <table class="donation-board__table">
+                <thead>
+                  <tr>
+                    <th>时间</th>
+                    <th>昵称</th>
+                    <th>金额</th>
+                    <th>留言</th>
+                    <th>来源</th>
+                  </tr>
+                </thead>
+                <tbody id="donationTableBody">
+                  <tr><td colspan="5" class="donation-loading">加载中...</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="coffee-modal__footer">
+        <p class="coffee-modal__notice">量力而行，心意至上，拒绝攀比，自愿为主。</p>
+        <button type="button" class="coffee-modal__btn" id="coffeeModalCloseBtn">退出</button>
+      </div>
+    </div>
+  </div>
+  <script>window.__BASE__ = ""; window.__PRODUCTS__ = [{"slug":"outdoor-nav-app","title":"野外导航 App"}];</script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/donation.js"></script>
+</body>
+</html>

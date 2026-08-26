@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UVK1 智能对讲系统 · BD1AHN</title>
+  <meta name="description" content="BD1AHN 开发作品展示">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/donation.css">
+</head>
+<body class="page-product page-product--uvk1">
+  <div class="grain" aria-hidden="true"></div>
+  <header class="site-header">
+    <a href="index.html" class="logo">
+      <span class="logo__brand">BD1AHN</span>
+      <span class="logo__tagline">开发作品展示</span>
+    </a>
+    <button type="button" class="coffee-btn" id="coffeeBtn" title="点击打开页面进行打赏" aria-label="请他喝杯咖啡">
+      <span class="coffee-text">请他喝杯咖啡</span>
+    </button>
+  </header>
+  <main class="showcase-scroll showcase-scroll--single">
+    
+  <section class="product-page" id="uvk1-walkie" data-device="uvk1">
+    <div class="product-detail">
+      <div class="product-showcase">
+        
+    <div class="device-mockup device-mockup--uvk1" data-device="uvk1">
+      <div class="device-mockup__screen device-mockup__screen--uvk1">
+        <div class="device-carousel"><div class="device-slide active" data-index="0">
+          <img src="assets/products/uvk1-walkie/screen-1.svg" alt="UVK1 智能对讲系统 - 1" loading="eager">
+        </div><div class="device-slide" data-index="1">
+          <img src="assets/products/uvk1-walkie/screen-2.svg" alt="UVK1 智能对讲系统 - 2" loading="lazy">
+        </div></div><div class="screen-nav">
+      <button type="button" class="screen-nav__btn screen-nav__btn--prev" aria-label="上一张">‹</button>
+      <button type="button" class="screen-nav__btn screen-nav__btn--next" aria-label="下一张">›</button>
+      <span class="screen-nav__count"><span class="screen-nav__current">1</span> / 2</span>
+    </div>
+      </div>
+      <img class="device-mockup__frame" src="assets/images/devices/uvk1-body.svg" alt="" draggable="false">
+      <span class="device-mockup__brand">UVK1</span>
+    </div>
+      </div>
+      <div class="product-info">
+        <p class="product-meta">
+          <span class="device-badge device-badge--uvk1">UVK1 对讲机</span>
+          <time>2025-08</time>
+        </p>
+        <h1>UVK1 智能对讲系统</h1>
+        <p class="product-lead">基于 UVK1 平台的户外通信解决方案，稳定可靠、续航持久。</p>
+        <div class="product-tags"><span class="tag">硬件</span><span class="tag">对讲机</span><span class="tag">户外</span></div>
+        <div class="product-content prose">
+          <h2>项目概述</h2>
+<p>UVK1 是一款面向户外探险、应急救援场景的专业对讲设备。本项目为其开发了配套的固件与通信协议，实现了群组通话、GPS 定位共享和紧急求救功能。</p>
+<h2>核心特性</h2>
+<ul>
+<li><strong>远距离通信</strong> — 在开阔环境下有效通信距离可达 5 公里</li>
+<li><strong>超长续航</strong> — 2500mAh 电池，待机时间超过 72 小时</li>
+<li><strong>防水防尘</strong> — IP67 防护等级，适应恶劣户外环境</li>
+<li><strong>一键求救</strong> — 紧急情况下长按 PTT 键触发 SOS 信号</li>
+</ul>
+<h2>技术实现</h2>
+<p>固件基于 RT-Thread 实时操作系统开发，通信协议采用自定义帧格式，支持 AES-128 加密。上位机管理端使用 Web 技术栈，可远程配置频道与密钥。</p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  </main>
+  <div id="coffeeModal" class="coffee-modal coffee-modal--donation" hidden aria-hidden="true">
+    <div class="coffee-modal__backdrop" data-coffee-dismiss tabindex="-1" aria-hidden="true"></div>
+    <div class="coffee-modal__panel" role="dialog" aria-modal="true" aria-labelledby="coffeeModalTitle">
+      <h2 id="coffeeModalTitle" class="coffee-modal__title">☕ 请作者喝杯咖啡</h2>
+      <div class="coffee-modal__body">
+        <div class="coffee-modal__left">
+          <div class="coffee-modal__content">
+            <p class="coffee-modal__text">感谢您关注 BD1AHN 的开发作品！维护网站与项目需要时间和精力。</p>
+            <p class="coffee-modal__text">如果这个项目对您有帮助，欢迎打赏支持！<strong>打赏时请备注您的呼号</strong>，方便我感谢您的支持！</p>
+            <div class="coffee-modal__qrcodes">
+              <div class="coffee-modal__qrcode-item">
+                <img src="assets/images/wechat_pay.jpg" alt="微信收款码" class="coffee-modal__qrcode-img">
+                <span class="coffee-modal__qrcode-label">微信支付</span>
+              </div>
+              <div class="coffee-modal__qrcode-item">
+                <img src="assets/images/ali_pay.jpg" alt="支付宝收款码" class="coffee-modal__qrcode-img">
+                <span class="coffee-modal__qrcode-label">支付宝</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="coffee-modal__right">
+          <div class="donation-board">
+            <div class="donation-board__header">打赏榜单</div>
+            <div class="donation-board__scroll">
+              <table class="donation-board__table">
+                <thead>
+                  <tr>
+                    <th>时间</th>
+                    <th>昵称</th>
+                    <th>金额</th>
+                    <th>留言</th>
+                    <th>来源</th>
+                  </tr>
+                </thead>
+                <tbody id="donationTableBody">
+                  <tr><td colspan="5" class="donation-loading">加载中...</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="coffee-modal__footer">
+        <p class="coffee-modal__notice">量力而行，心意至上，拒绝攀比，自愿为主。</p>
+        <button type="button" class="coffee-modal__btn" id="coffeeModalCloseBtn">退出</button>
+      </div>
+    </div>
+  </div>
+  <script>window.__BASE__ = ""; window.__PRODUCTS__ = [{"slug":"uvk1-walkie","title":"UVK1 智能对讲系统"}];</script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/donation.js"></script>
+</body>
+</html>
