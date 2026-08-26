@@ -148,6 +148,8 @@ function scanProducts() {
         title: data.title,
         device,
         deviceLabel: String(deviceLabel).trim(),
+        firmwareRepo: String(data.firmware_repo || data.firmwareRepo || '').trim(),
+        version: String(data.version || '').trim(),
         description: data.description || '',
         order: data.order ?? 999,
         date: formatDisplayDate(data.date),
@@ -268,6 +270,29 @@ function deviceBadgeText(product) {
   return product.deviceLabel || 'Phone';
 }
 
+function renderProductTitle(product) {
+  const manualVersion = product.version;
+  const firmwareRepo = product.firmwareRepo;
+
+  if (manualVersion) {
+    return `
+        <div class="product-title">
+          <h1>${escapeHtml(product.title)}</h1>
+          <span class="firmware-version-badge" title="版本 ${escapeHtml(manualVersion)}" aria-label="版本">${escapeHtml(manualVersion)}</span>
+        </div>`;
+  }
+
+  if (firmwareRepo) {
+    return `
+        <div class="product-title">
+          <h1>${escapeHtml(product.title)}</h1>
+          <span class="firmware-version-badge" data-firmware-repo="${escapeHtml(firmwareRepo)}" hidden aria-label="最新固件版本"></span>
+        </div>`;
+  }
+
+  return `<h1>${escapeHtml(product.title)}</h1>`;
+}
+
 function renderProductSection(product, { id = product.slug } = {}) {
   const tags = product.tags.map((t) => `<span class="tag">${escapeHtml(t)}</span>`).join('');
 
@@ -282,7 +307,7 @@ function renderProductSection(product, { id = product.slug } = {}) {
           <span class="device-badge device-badge--${product.device}">${escapeHtml(deviceBadgeText(product))}</span>
           ${product.date ? `<time>${escapeHtml(product.date)}</time>` : ''}
         </p>
-        <h1>${escapeHtml(product.title)}</h1>
+        ${renderProductTitle(product)}
         ${product.description ? `<p class="product-lead">${escapeHtml(product.description)}</p>` : ''}
         ${tags ? `<div class="product-tags">${tags}</div>` : ''}
         <div class="product-content prose">

@@ -2,6 +2,7 @@
 title: 叮咚鸡（Dondji）
 device: walkie
 device_label: 抖音：小闫连不上
+firmware_repo: EthanYan6/Dondji
 description: 适用于泉盛uvk1、uvk6 v3版本的一款固件。
 order: 1
 date: 2026-08-26 12:20:00

@@ -106,4 +106,52 @@
       else next();
     }, { passive: true });
   });
+
+  /* ── Firmware version badges ── */
+  const versionBadges = document.querySelectorAll('.firmware-version-badge[data-firmware-repo]');
+  const versionCache = new Map();
+
+  function formatVersionTag(tag) {
+    if (!tag) return '';
+    const cleaned = String(tag).trim().replace(/^v/i, '');
+    return cleaned ? `v${cleaned}` : '';
+  }
+
+  async function fetchLatestFirmwareVersion(repo) {
+    if (versionCache.has(repo)) return versionCache.get(repo);
+
+    try {
+      const res = await fetch(`https://api.github.com/repos/${repo}/releases/latest`, {
+        headers: { Accept: 'application/vnd.github+json' },
+      });
+      if (!res.ok) throw new Error(String(res.status));
+      const data = await res.json();
+      const version = formatVersionTag(data.tag_name);
+      versionCache.set(repo, version);
+      return version;
+    } catch {
+      versionCache.set(repo, null);
+      return null;
+    }
+  }
+
+  async function loadFirmwareVersions() {
+    const repos = [...new Set(
+      [...versionBadges].map((el) => el.dataset.firmwareRepo).filter(Boolean)
+    )];
+
+    await Promise.all(repos.map(async (repo) => {
+      const version = await fetchLatestFirmwareVersion(repo);
+      document
+        .querySelectorAll(`.firmware-version-badge[data-firmware-repo="${repo}"]`)
+        .forEach((badge) => {
+          if (!version) return;
+          badge.textContent = version;
+          badge.title = `最新固件 ${version}`;
+          badge.hidden = false;
+        });
+    }));
+  }
+
+  if (versionBadges.length) loadFirmwareVersions();
 })();

@@ -2,6 +2,7 @@
 title: 多固件引导
 device: walkie
 device_label: 抖音：小闫连不上
+version: 0.1.28
 description: 适用于泉盛uvk1、uvk6 v3版本的一个多固件刷机工具，替换原开机引导。
 order: 5
 date: 2026-08-26 15:34:00
