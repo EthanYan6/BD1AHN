@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="phoneBody" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#646468"/>
+      <stop offset="18%" stop-color="#4a4a4e"/>
+      <stop offset="55%" stop-color="#2e2e32"/>
+      <stop offset="100%" stop-color="#18181c"/>
+    </linearGradient>
+    <linearGradient id="phoneEdge" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#707074"/>
+      <stop offset="50%" stop-color="#3a3a3e"/>
+      <stop offset="100%" stop-color="#707074"/>
+    </linearGradient>
+    <filter id="phoneShadow" x="-6%" y="-12%" width="112%" height="130%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <ellipse cx="450" cy="408" rx="280" ry="9" fill="#000" opacity="0.22"/>
+
+  <g filter="url(#phoneShadow)">
+    <!-- bezel ring: inner hole fully inside outer shell -->
+    <path fill="url(#phoneBody)" fill-rule="evenodd" stroke="url(#phoneEdge)" stroke-width="1" d="
+      M 82 10
+      H 818
+      a 38 38 0 0 1 38 38
+      V 372
+      a 38 38 0 0 1 -38 38
+      H 82
+      a 38 38 0 0 1 -38 -38
+      V 48
+      a 38 38 0 0 1 38 -38
+      Z
+      M 58 22
+      H 842
+      V 398
+      H 58
+      Z
+    "/>
+
+    <!-- top bezel highlight -->
+    <path stroke="rgba(255,255,255,0.18)" stroke-width="1.2" stroke-linecap="round" d="M 110 14 H 790"/>
+
+    <!-- side buttons (left bezel) -->
+    <rect x="46" y="118" width="4" height="34" rx="2" fill="#353538"/>
+    <rect x="46" y="168" width="4" height="52" rx="2" fill="#353538"/>
+
+    <!-- camera (left bezel) -->
+    <circle cx="51" cy="210" r="6" fill="#0a0a0a" stroke="#2e2e32" stroke-width="0.8"/>
+    <circle cx="51" cy="210" r="2.5" fill="#1a2844"/>
+
+    <!-- speaker grille (right bezel) -->
+    <g fill="#2c2c30">
+      <circle cx="874" cy="196" r="1.2"/>
+      <circle cx="874" cy="202" r="1.2"/>
+      <circle cx="874" cy="208" r="1.2"/>
+      <circle cx="874" cy="214" r="1.2"/>
+      <circle cx="874" cy="220" r="1.2"/>
+      <circle cx="874" cy="226" r="1.2"/>
+    </g>
+  </g>
+</svg>

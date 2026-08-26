@@ -1,6 +1,6 @@
 ---
 title: FMO副屏（fmo-show）
-device: iphone
+device: phone
 description: 为FMO开发的一款便携式查看和操作FMO的系统，还原FMO原始UI，简洁美观。目前有网页版、安卓软件、电脑软件。
 order: 6
 images:

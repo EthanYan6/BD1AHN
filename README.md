@@ -22,7 +22,7 @@ products/
 ```yaml
 ---
 title: 产品标题
-device: uvk1          # uvk1 / walkie = 对讲机图案 | iphone = 手机图案
+device: pc          # phone = 手机 | walkie = 对讲机 | pc = 显示器
 device_label: UVK6    # 对讲机机身铭牌 & 角标文字，如 UVK1、UVK6
 description: 一句话简介
 order: 1
@@ -38,8 +38,9 @@ tags:
 
 | 值 | 效果 |
 |---|---|
-| `uvk1` / `walkie` | 左侧显示对讲机实物框，图片在屏幕区域轮播 |
-| `iphone` | 左侧显示 iPhone 横屏实物框，图片在屏幕区域轮播 |
+| `walkie` | 左侧显示对讲机实物框，图片在屏幕区域轮播 |
+| `phone` | 左侧显示手机横屏实物框，图片在屏幕区域轮播 |
+| `pc` | 左侧显示 PC 显示器，大屏展示截图 |
 
 **`device_label`**：对讲机机身上的型号文字（如 `UVK1`、`UVK6`），同时显示在右上角角标。手机产品可省略。
 

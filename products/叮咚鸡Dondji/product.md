@@ -1,6 +1,6 @@
 ---
 title: 叮咚鸡（Dondji）
-device: uvk1
+device: walkie
 device_label: uv-k1
 description: 适用于泉盛uvk1、uvk6 v3版本的一款固件。
 order: 1

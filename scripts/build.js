@@ -122,15 +122,12 @@ function scanProducts() {
         return null;
       }
 
-      const deviceRaw = (data.device || 'iphone').toLowerCase();
-      const device = ['uvk1', 'walkie', 'radio'].includes(deviceRaw)
-        ? 'uvk1'
-        : deviceRaw === 'iphone'
-          ? 'iphone'
-          : 'iphone';
+      const VALID_DEVICES = ['phone', 'pc', 'walkie'];
+      const deviceRaw = (data.device || 'phone').toLowerCase();
+      const device = VALID_DEVICES.includes(deviceRaw) ? deviceRaw : 'phone';
 
-      if (!['uvk1', 'iphone'].includes(device) && !['uvk1', 'walkie', 'radio', 'iphone'].includes(deviceRaw)) {
-        console.warn(`⚠ ${d.name}：device 应为 uvk1 / walkie / iphone，已回退为 iphone`);
+      if (!VALID_DEVICES.includes(deviceRaw)) {
+        console.warn(`⚠ ${d.name}：device 应为 phone / pc / walkie，已回退为 phone`);
       }
 
       const deviceLabel = data.device_label || data.model || '';
@@ -208,17 +205,23 @@ function renderCarousel(product) {
   return `<div class="device-carousel">${slides}</div>${nav}`;
 }
 
+function deviceFrameFile(device) {
+  if (device === 'walkie') return 'walkie-body.svg';
+  if (device === 'pc') return 'pc-body.svg';
+  return 'phone-body.svg';
+}
+
 function renderDevice(product) {
   const carousel = renderCarousel(product);
-  const frameUrl = url(`assets/images/devices/${product.device === 'uvk1' ? 'uvk1' : 'iphone'}-body.svg`);
+  const frameUrl = url(`assets/images/devices/${deviceFrameFile(product.device)}`);
 
-  if (product.device === 'uvk1') {
+  if (product.device === 'walkie') {
     const brand = product.deviceLabel
       ? `<span class="device-mockup__brand">${escapeHtml(product.deviceLabel)}</span>`
       : '';
     return `
-    <div class="device-mockup device-mockup--uvk1" data-device="uvk1">
-      <div class="device-mockup__screen device-mockup__screen--uvk1">
+    <div class="device-mockup device-mockup--walkie" data-device="walkie">
+      <div class="device-mockup__screen device-mockup__screen--walkie">
         ${carousel}
       </div>
       <img class="device-mockup__frame" src="${frameUrl}" alt="" draggable="false">
@@ -226,9 +229,19 @@ function renderDevice(product) {
     </div>`;
   }
 
+  if (product.device === 'pc') {
+    return `
+    <div class="device-mockup device-mockup--pc" data-device="pc">
+      <div class="device-mockup__screen device-mockup__screen--pc">
+        ${carousel}
+      </div>
+      <img class="device-mockup__frame" src="${frameUrl}" alt="" draggable="false">
+    </div>`;
+  }
+
   return `
-  <div class="device-mockup device-mockup--iphone" data-device="iphone">
-    <div class="device-mockup__screen device-mockup__screen--iphone">
+  <div class="device-mockup device-mockup--phone" data-device="phone">
+    <div class="device-mockup__screen device-mockup__screen--phone">
       ${carousel}
     </div>
     <img class="device-mockup__frame" src="${frameUrl}" alt="" draggable="false">
@@ -236,10 +249,13 @@ function renderDevice(product) {
 }
 
 function deviceBadgeText(product) {
-  if (product.device === 'uvk1') {
+  if (product.device === 'walkie') {
     return product.deviceLabel ? `${product.deviceLabel} 对讲机` : '对讲机';
   }
-  return product.deviceLabel || 'iPhone';
+  if (product.device === 'pc') {
+    return product.deviceLabel || 'PC';
+  }
+  return product.deviceLabel || 'Phone';
 }
 
 function renderProductSection(product, { id = product.slug } = {}) {

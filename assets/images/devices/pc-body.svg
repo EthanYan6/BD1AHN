@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 460" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="bezel" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3a3a3e"/>
+      <stop offset="40%" stop-color="#252528"/>
+      <stop offset="100%" stop-color="#18181a"/>
+    </linearGradient>
+    <linearGradient id="stand" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2e2e32"/>
+      <stop offset="100%" stop-color="#1a1a1c"/>
+    </linearGradient>
+    <linearGradient id="base" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#333"/>
+      <stop offset="100%" stop-color="#222"/>
+    </linearGradient>
+    <filter id="monShadow" x="-8%" y="-8%" width="116%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="20" flood-color="#000" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+
+  <ellipse cx="360" cy="448" rx="160" ry="8" fill="#000" opacity="0.22"/>
+
+  <g filter="url(#monShadow)">
+    <!-- monitor panel with large screen hole -->
+    <path fill="url(#bezel)" fill-rule="evenodd" stroke="#444" stroke-width="1" d="
+      M 36 28
+      H 684
+      a 16 16 0 0 1 16 16
+      V 368
+      a 16 16 0 0 1 -16 16
+      H 36
+      a 16 16 0 0 1 -16 -16
+      V 44
+      a 16 16 0 0 1 16 -16
+      Z
+      M 28 36
+      H 692
+      V 360
+      H 28
+      Z
+    "/>
+
+    <!-- inner screen lip -->
+    <rect x="24" y="32" width="672" height="332" rx="8" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+
+    <!-- chin logo dot -->
+    <circle cx="360" cy="376" r="3" fill="#333" stroke="#444" stroke-width="0.5"/>
+
+    <!-- neck -->
+    <path fill="url(#stand)" d="M 328 384 H 392 V 412 H 328 Z"/>
+
+    <!-- base -->
+    <rect x="280" y="412" width="160" height="10" rx="5" fill="url(#base)" stroke="#3a3a3a" stroke-width="0.8"/>
+    <rect x="300" y="422" width="120" height="4" rx="2" fill="#2a2a2a"/>
+  </g>
+</svg>
